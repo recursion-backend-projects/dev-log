@@ -6,78 +6,61 @@ actor 管理者ユーザー as admin
 actor システム as system
 
 package Eコマースアプリ{
-(商品を検索する) as searchProducts
-(商品一覧を見る) as viewProducts
-(商品をフィルタリングする) as fiterProducts
-(商品の詳細を見る) as viewProductDetails
-(カートに商品を追加する) as addProductToCart
-(カート内の商品を編集する) as editProductInCart
-(商品を購入する) as purchaseProduct
-(商品を評価する) as rateProduct
-(商品にコメントをする) as commentToProduct
 
-package ログインユーザーのみ{
-    (ログイン/ログアウトする) as loginLogout
-    (購入履歴を閲覧する) as viewPurchaseHistory
-    (領収書を保存する) as saveRecipt
-    (会員情報を更新する) as updateCustomerInfo
-    (商品をお気に入りリストに追加する) as addProductToFavoriteList
-    (商品をウィッシュリスト（欲しいものリスト）に追加する) as addProductToWishList
-    (ウィッシュリストを他の人に共有する) as shareWishList
+    package 主な機能{
+        (商品を検索する) as searchProducts
+        (商品一覧を見る) as viewProducts
+        (商品をフィルタリングする) as fiterProducts
+        (商品の詳細を見る) as viewProductDetails
+        (カートに商品を追加する) as addProductToCart
+        (カート内の商品を編集する) as editProductInCart
+        (商品を購入する) as purchaseProduct
+    }
+
+
+    package ログインユーザーのみ{
+        (ログイン/ログアウトする) as loginLogout
+        (商品を評価する) as rateProduct
+        (商品にコメントをする) as commentToProduct
+        (購入履歴を閲覧する) as viewPurchaseHistory
+        (領収書を保存する) as saveRecipt
+        (会員情報を更新する) as updateCustomerInfo
+        (商品をお気に入りリストに追加する) as addProductToFavoriteList
+        (商品をウィッシュリスト（欲しいものリスト）に追加する) as addProductToWishList
+        (ウィッシュリストを他の人に共有する) as shareWishList
+        (カスタマーサポートにチャットで問い合わせる) as chat
+    }
+
+    package 商品管理{
+        (商品を作成する) as addProduct
+        (商品を削除する) as removeProduct
+        (商品の詳細を編集する) as editProductDetails
+        (商品の在庫レベルを閲覧する) as checkProductInventory
+    }
+
+
+    package 物理製品{
+        (追跡番号を生成する) as generateTrackingNumber
+        (通知メールを送る) as sendOrderNotification
+    }
+
+    package デジタル製品{
+        (ダウンロード可能なzipファイルを提供する) as provideZipfile
+    }
+
 }
 
 
-(商品を作成する) as addProduct
-(商品を削除する) as removeProduct
-(商品の詳細を編集する) as editProductDetails
-(商品の在庫レベルを閲覧する) as checkProductInventory
+loginUser --> ログインユーザーのみ
+loginUser --> 主な機能
 
-package 物理製品{
-    (追跡番号を生成する) as generateTrackingNumber
-    (通知メールを送る) as sendOrderNotification
-}
+guest --> loginUser
+guest --> 主な機能
 
-package デジタル製品{
-    (ダウンロード可能なzipファイルを提供する) as provideZipfile
-}
+商品管理 <-- admin
 
-}
+物理製品 <-- system
+デジタル製品 <-- system
 
-loginUser --> guest
-loginUser --> searchProducts
-loginUser --> viewProducts
-loginUser --> fiterProducts
-loginUser --> viewProductDetails
-loginUser --> addProductToCart
-loginUser --> editProductInCart
-loginUser --> purchaseProduct
-loginUser --> rateProduct
-loginUser --> commentToProduct
-loginUser --> loginLogout
-loginUser --> viewPurchaseHistory
-loginUser --> saveRecipt
-loginUser --> updateCustomerInfo
-loginUser --> addProductToFavoriteList
-loginUser --> addProductToWishList
-loginUser --> shareWishList
-
-guest --> searchProducts
-guest --> viewProducts
-guest --> fiterProducts
-guest --> viewProductDetails
-guest --> addProductToCart
-guest --> editProductInCart
-guest --> purchaseProduct
-guest --> rateProduct
-guest --> commentToProduct
-
-addProduct <-- admin
-removeProduct <-- admin
-editProductDetails <-- admin
-checkProductInventory <-- admin
-
-generateTrackingNumber <-- system
-sendOrderNotification <-- system
-provideZipfile <-- system
 @enduml
 
