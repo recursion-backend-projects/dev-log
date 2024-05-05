@@ -66,7 +66,7 @@ erDiagram
         int id PK
         string name
         int price
-        int availableItemCount
+        int stock
         string description
         int category_id FK
         int admin_id FK
