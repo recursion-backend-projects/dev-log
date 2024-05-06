@@ -70,6 +70,7 @@ erDiagram
         string description
 　　　　　　　　　　　　　　　　%% statusはenumなのでint型　{ draft:0, published:1, archived:2, trashed:3 }
         int status
+        string string_product_id
         int category_id FK
         int admin_id FK
     }
