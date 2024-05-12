@@ -99,7 +99,6 @@ erDiagram
     ProductCategory{
         int id PK
         string name
-        string description
     }
 
     OrderLog ||--|{ Order: belongsTo
