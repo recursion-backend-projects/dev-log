@@ -9,8 +9,6 @@ erDiagram
 
     Customer{
         int id PK
-        int customer_account_id FK
-        int address_id FK
     }
 
     Guest ||--|| Address: has
@@ -28,6 +26,7 @@ erDiagram
         string password
         string status
         string email
+        int customer_id FK
     }
 
     Admin ||--|| Address: has
@@ -36,8 +35,6 @@ erDiagram
 
     Admin{
         int id PK
-        int admin_account_id FK
-        int address_id FK
     }
 
     AdminAccount{
@@ -47,6 +44,7 @@ erDiagram
         string password
         string status
         string email
+        int admin_id FK
     }
 
     Address{
@@ -56,6 +54,8 @@ erDiagram
         string city
         string streetAddress
         string streetAddress_2
+        int addressable_id FK
+        string addressable_type
     }
 
 
