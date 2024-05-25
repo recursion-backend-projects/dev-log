@@ -11,14 +11,6 @@ erDiagram
         int id PK
     }
 
-    Guest ||--|| Address: has
-    Guest ||--|{ Order: places
-    Guest{
-        int id PK
-        string email 
-        int address_id FK
-    }
-
     CustomerAccount{
         int id PK
         string userName
@@ -70,7 +62,8 @@ erDiagram
         string description
 　　　　　　　　　　　　　　　　%% statusはenumなのでint型　{ draft:0, published:1, archived:2, trashed:3 }
         int status
-        string string_product_id
+        string stripe_product_id
+        string stripe_price_id
         %% { analog: 0, digital: 1}
         int type
         string creator
