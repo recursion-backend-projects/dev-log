@@ -9,6 +9,7 @@ erDiagram
 
     Customer{
         int id PK
+        string stripe_customer_id
     }
 
     CustomerAccount{
