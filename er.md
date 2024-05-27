@@ -86,9 +86,10 @@ erDiagram
     Order{
         int id PK
         string orderNumber
-        date orderDate
-        int customer_id FK
+        int total
         string guest_email
+        int customer_id FK
+        date orderDate
     }
 
     ProductCategory{
