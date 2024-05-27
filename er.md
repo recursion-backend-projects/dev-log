@@ -78,18 +78,17 @@ erDiagram
     OrderItem{
         int id PK
         int quantity
-        int price
         int order_id FK
         int product_id FK
     }
 
     Order{
         int id PK
-        string orderNumber
+        string order_number
         int total
         string guest_email
         int customer_id FK
-        date orderDate
+        date order_date
     }
 
     ProductCategory{
