@@ -88,6 +88,7 @@ erDiagram
         string orderNumber
         date orderDate
         int customer_id FK
+        string guest_email
     }
 
     ProductCategory{
