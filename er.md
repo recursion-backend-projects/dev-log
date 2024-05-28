@@ -103,12 +103,6 @@ erDiagram
         int order_id FK
     }
 
-    Receipt ||--|| Order: belongsTo
-    Receipt{
-        int id PK
-        int order_id FK
-    }
-
     ProductReview }o--|| Product: about
     ProductReview{
         int id PK
