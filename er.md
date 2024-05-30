@@ -107,6 +107,7 @@ erDiagram
     ProductReview{
         int id PK
         int rating
+        string title
         string review
         int customer_id FK
         int product_id FK
