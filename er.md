@@ -91,6 +91,16 @@ erDiagram
         date order_date
     }
 
+    Shipping ||--|| Order: belongsTo
+    Shipping{
+        int id PK
+        string tracking_number
+        int carrier
+        int status
+        datetime shipping_at
+        it order_id FK
+    }
+
     ProductCategory{
         int id PK
         string name
