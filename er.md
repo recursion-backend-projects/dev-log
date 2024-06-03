@@ -20,7 +20,7 @@ erDiagram
         string password
         string status
         string email
-        int phone_number
+        string phone_number
         int customer_id FK
     }
 
