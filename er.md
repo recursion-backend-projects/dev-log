@@ -14,7 +14,8 @@ erDiagram
 
     CustomerAccount{
         int id PK
-        string userName
+        string user_name
+        string shipping_name
         string name
         string password
         string status
