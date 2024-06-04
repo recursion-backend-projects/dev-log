@@ -44,7 +44,7 @@ erDiagram
 
     Address{
         int id PK
-        int zipCode
+        string zip_code
         string streetAddress
         string streetAddress_2
         int prefecture_id
