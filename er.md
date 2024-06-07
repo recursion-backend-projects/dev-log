@@ -54,7 +54,7 @@ erDiagram
 
 
     Product |{--|| ProductCategory: belongsTo
-    Product ||--o{ ProductTag: has
+    Product ||--o{ Tagging: belongsTo
 
     Product{
         int id PK
@@ -146,16 +146,23 @@ erDiagram
         int order_id FK
     }
 
+    Tag o{--|| Tagging: hasMany
+
     Tag{
         int id PK
-        string name 
+        string name
+        int taggings_count
     }
 
-    ProductTag o{--|| Tag: belongsTo 
-    ProductTag{
-        int id PK
-        int product_id FK
+    Tagging{
+        string taggable_type
+        int taggable_id
+        string tagger_type
+        int tagger_id
+        string context
+        string tenant
         int tag_id FK
     }
+
 
 ```
