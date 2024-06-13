@@ -6,10 +6,19 @@ erDiagram
     Customer ||--o{ WishProduct: has
     Customer ||--o{ ProductReview: writes
     Customer ||--|| CustomerAccount: has
+    Customer ||--o{ Contact: has
 
     Customer{
         int id PK
         string stripe_customer_id
+    }
+
+    Contact{
+        int id PK
+        string name
+        string email
+        string message
+        int customer_id FK
     }
 
     CustomerAccount{
