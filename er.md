@@ -7,6 +7,7 @@ erDiagram
     Customer ||--o{ ProductReview: writes
     Customer ||--|| CustomerAccount: has
     Customer ||--o{ Contact: has
+    Customer ||--|| Chat: has
 
     Customer{
         int id PK
@@ -171,6 +172,11 @@ erDiagram
         string context
         string tenant
         int tag_id FK
+    }
+
+    Chat{
+        int id PK
+        int customer_id FK
     }
 
 
