@@ -2,6 +2,7 @@
 erDiagram
     Customer ||--|| Address: has
     Customer ||--o{ Order: places
+    Customer ||--o{ DownloadProduct: has
     Customer ||--o{ FavoriteProduct: has
     Customer ||--o{ WishProduct: has
     Customer ||--o{ ProductReview: writes
@@ -130,6 +131,14 @@ erDiagram
         int rating
         string title
         string review
+        int customer_id FK
+        int product_id FK
+    }
+
+    DownloadProduct ||--|| Product: belongsTo
+    DownloadProduct{
+        int id PK
+        string download_url
         int customer_id FK
         int product_id FK
     }
