@@ -9,7 +9,7 @@ erDiagram
     Customer ||--|| CustomerAccount: has
     Customer ||--o{ Contact: has
     Customer ||--|| Chat: has
-
+    Customer ||--|| WishProductToken: has
     Customer{
         int id PK
         string stripe_customer_id
@@ -155,6 +155,12 @@ erDiagram
         int id PK
         int customer_id FK
         int product_id FK
+    }
+
+    WishProductToken{
+        int id PK
+        string token
+        int customer_id FK
     }
 
     Payment ||--|| Order: belongsTo
