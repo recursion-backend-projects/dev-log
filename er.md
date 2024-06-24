@@ -81,6 +81,7 @@ erDiagram
         int type
         string creator
         string image_url
+        datetime released_at
         int category_id FK
         int admin_id FK
     }
